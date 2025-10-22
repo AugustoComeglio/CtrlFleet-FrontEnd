@@ -1,0 +1,107 @@
+.contenedor{
+    padding: 50px;
+    width: 100%;
+}
+.top{
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px;
+}
+.filtro {
+    flex:1;
+  }
+  .boton{
+    flex:1;
+    text-align: right;
+  }
+
+
+
+
+.title{
+    text-align: center;
+}
+
+.modificar{
+    background-color: lightblue;
+}
+
+.alerta{
+    background-color: lightcoral;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+.confirmar{
+    background-color: lightblue;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+mat-card{
+    margin: 2%;
+    text-align: left;
+}
+
+.mat-mdc-form-field{
+    width: 40%;
+    margin: 1%;
+}
+
+.mat-50{
+    width: 48%;
+    margin: 1%;
+}
+
+
+.contBotones {
+    flex:1;
+  text-align: right;
+}
+
+.inputs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem 1rem;
+}
+
+.boton-add{
+    background-color:lightblue;;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    margin: 5px;
+}
+
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  mat-card-content h2 {
+    text-align: center;
+  }  
+
+  mat-card-actions {
+    display: flex; 
+    justify-content: space-between;
+  }
+
+  mat-card-header {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+
+  } 
+
+  .img-card{
+    border-radius: 2rem;
+    padding: 1rem;
+    height: 15rem;
+    object-fit: cover;
+  } 
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    width: 100%;
+    gap: 1rem;
+  }

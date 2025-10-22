@@ -1,0 +1,53 @@
+<div class="contenedor">
+    <div class="titles">
+      <h1>Estaciones</h1>
+    </div>
+    <div class="top">
+      <mat-form-field class="filtro">
+        <input matInput (keyup)="FilterChange($event)" placeholder="Buscar..." />
+      </mat-form-field>
+      <div class="boton">
+        <button mat-button class="boton-add" (click)="Add()"><i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+  
+    <div class="tabla">
+      <table mat-table [dataSource]="dataSource" class="table">
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef class="table-header">
+            Nombre
+          </th>
+          <td mat-cell *matCellDef="let element" class="table-cell">
+            {{ element.name }}
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef class="table-header">Acciones</th>
+          <td mat-cell *matCellDef="let element" class="table-cell">
+            <button mat-button class="boton-mod" (click)="Mod(element.id,element.name)"><i class="fas fa-pen"></i></button>
+            <button mat-button class="boton-eli" (click)="Delete(element.id,element.name)"><i class="fas fa-trash"></i></button>
+          </td>
+        </ng-container>
+  
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumns"
+          class="table-header-row"
+        ></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumns"
+          class="table-row"
+        ></tr>
+      </table>
+  
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        [pageSize]="5"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+      >
+      </mat-paginator>
+    </div>
+  </div>

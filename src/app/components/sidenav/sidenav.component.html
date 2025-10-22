@@ -1,0 +1,70 @@
+<div
+  class="example-container"
+  [class.example-is-mobile]="mobileQuery.matches"
+  *ngIf="shouldRun"
+>
+  <mat-toolbar color="primary" class="example-toolbar cremita">
+    <button mat-icon-button (click)="isExpanded = !isExpanded">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-button [routerLink]="dashboard">
+      <div class="logobtn">
+        <img src="assets/ctrlfleet-icon-white.png" alt="" class="logo" />
+        <h1>CtrlFleet</h1>
+      </div>
+    </button>
+    <button mat-icon-button class="campanaNotificacion">
+      <i class="far fa-bell"></i>
+    </button>
+    <button mat-button [matMenuTriggerFor]="menu" class="usuario">
+      <i class="fas fa-user-circle">
+        {{ user_data_type }} - {{ user_data_email }}</i
+      >
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logOut()">
+        <div class="botOpc"><i class="fas fa-sign-out"></i> Cerrar Sesión</div>
+      </button>
+      <button mat-menu-item (click)="nada()">
+        <div class="botOpc">
+          <i class="fas fa-user-edit"></i> Editar datos de la cuenta
+        </div>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+
+  <mat-drawer-container
+    class="example-container mat-typography"
+    autosize
+    style="margin-top: 64px"
+  >
+    <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+      <mat-nav-list>
+        <a
+          mat-list-item
+          [routerLink]="nav.routerLink"
+          *ngFor="let nav of fillerNav"
+        >
+          <div class="itemNavBar">
+            <span class="navBarListItem">
+              <i [ngClass]="nav.icon" class="navIcon"></i>
+            </span>
+            <span mat-line *ngIf="isExpanded">{{ nav.label }}</span>
+          </div>
+        </a>
+      </mat-nav-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- <mat-sidenav-content class="example-sidenav-content">      
+      <div class="body">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content> -->
+  </mat-drawer-container>
+</div>
+
+<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>

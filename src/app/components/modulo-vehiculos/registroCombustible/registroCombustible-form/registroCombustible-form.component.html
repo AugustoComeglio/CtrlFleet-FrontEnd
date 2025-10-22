@@ -1,0 +1,65 @@
+<form [formGroup]="myForm" (ngSubmit)="saveRegistroCombustible()">
+  <h1 mat-dialog-title class="title">{{ inputData.title }}</h1>
+
+  <div mat-dialog-content>
+
+    <div class="inputs">
+
+    <mat-form-field>
+      <mat-label>Fecha de carga</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="registered_at">
+      <mat-hint>YYYY/MM/DD</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cantidad</mat-label>
+      <input formControlName="quantity" matInput required/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Unidad</mat-label>
+      <mat-select formControlName="unit_id">
+        <mat-option *ngFor="let unidad of listUnidades" [value]="unidad.id">
+          {{unidad.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Precio</mat-label>
+      <input formControlName="unit_price" matInput required/>
+    </mat-form-field>
+ 
+      <mat-form-field>
+        <mat-label>Tipo Combustible</mat-label>
+        <mat-select formControlName="fuel_type_id">
+          <mat-option *ngFor="let tipoCombustible of listTipocombustibles" [value]="tipoCombustible.id">
+            {{tipoCombustible.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Estacion</mat-label>
+        <mat-select formControlName="gas_station_id">
+          <mat-option *ngFor="let estacion of listEstaciones" [value]="estacion.id">
+            {{estacion.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Observaciones</mat-label>
+      <textarea formControlName="observation" matInput placeholder="Observaciones.."></textarea>
+    </mat-form-field>
+  </div>
+
+</div>
+
+  <div mat-dialog-actions class="contBotones">
+    <button mat-raised-button class="confirmar" type="submit">Guardar</button>
+    <button (click)="closeDialog()" mat-raised-button class="alerta" type="button"> Cancelar </button>
+  </div>
+</form>

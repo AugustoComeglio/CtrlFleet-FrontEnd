@@ -1,0 +1,106 @@
+<form [formGroup]="myForm" (ngSubmit)="saveVehiculo()">
+  <h1 mat-dialog-title class="title">{{ inputData.title }}</h1>
+
+  <div mat-dialog-content>
+
+    <div class="inputs">
+
+    
+    <mat-form-field>
+      <mat-label>Patente</mat-label>
+      <input formControlName="license_plate" matInput required/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Km iniciales</mat-label>
+      <input formControlName="initial_kms" matInput required/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Año de produccion</mat-label>
+      <input formControlName="production_year" matInput required/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Color</mat-label>
+      <input formControlName="color" matInput required/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tipo Vehiculo</mat-label>
+      <mat-select formControlName="vehicle_type_id">
+        <mat-option *ngFor="let tipoVehiculo of tipoVehiculoList" [value]="tipoVehiculo.id">
+          {{tipoVehiculo.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tipo Combustible</mat-label>
+      <mat-select formControlName="fuel_type_id">
+        <mat-option *ngFor="let tipoCombustible of tipoCombustibleList" [value]="tipoCombustible.id">
+          {{tipoCombustible.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Deposito</mat-label>
+      <mat-select formControlName="warehouse_id">
+        <mat-option *ngFor="let deposito of depositosList" [value]="deposito.id">
+          {{deposito.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> 
+
+    <mat-form-field>
+      <mat-label>Flota</mat-label>
+      <mat-select formControlName="fleet_id">
+        <mat-option *ngFor="let flota of flotasList" [value]="flota.id">
+          {{flota.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Marca</mat-label>
+      <mat-select formControlName="brand_id">
+        <mat-option *ngFor="let marca of marcaList" [value]="marca.id">
+          {{marca.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Modelo</mat-label>
+      <mat-select formControlName="model_id">
+        <mat-option *ngFor="let modelo of modeloList" [value]="modelo.id">
+          {{modelo.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  
+    <mat-form-field>
+      <mat-label>Capacidad del tanque</mat-label>
+      <input formControlName="tank_capacity" matInput required/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Conductor</mat-label>
+      <mat-select formControlName="driver_id">
+        <mat-option *ngFor="let user of ususariosList" [value]="user.id">
+          {{user.first_name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  </div>
+  <div mat-dialog-actions class="contBotones">
+    <button mat-raised-button class="confirmar" type="submit">Guardar</button>
+    <button (click)="closeDialog()" mat-raised-button class="alerta" type="button"> Cancelar </button>
+  </div>
+
+</form>

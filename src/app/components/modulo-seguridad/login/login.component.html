@@ -1,0 +1,37 @@
+<div class="login-container">
+  <div class="login-content">
+    <img src="assets/logo.png" alt="" class="logo" />
+    <p class="tittle">Login</p>
+    <p class="tittle-intro">¡Bienvenido de nuevo!</p>
+
+    <form [formGroup]="myForm" (ngSubmit)="login()">
+      <div mat-dialog-content>
+        <mat-form-field>
+          <mat-label>Correo electronico </mat-label>
+          <input formControlName="email" matInput />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input formControlName="password" matInput type="password"/>
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions class="contBotones">
+        <button mat-raised-button class="confirmar" type="submit">
+          Entrar
+        </button>
+      </div>
+    </form>
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label> Correo electronico </mat-label>
+      <input matInput type="email" class="inputmail" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label> Contraseña </mat-label>
+      <input matInput type="password" />
+    </mat-form-field> -->
+
+    <p class="forgot-label">¿Olvidaste la contraseña?</p>
+  </div>
+</div>

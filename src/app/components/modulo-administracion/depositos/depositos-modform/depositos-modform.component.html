@@ -1,0 +1,22 @@
+<form [formGroup]="myForm" (ngSubmit)="updateDeposito()">
+  <h1 mat-dialog-title class="title">{{ inputData.title }}</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input formControlName="name" matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Codigo</mat-label>
+      <input formControlName="code" matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Ubicacion</mat-label>
+      <input formControlName="location" matInput />
+    </mat-form-field>
+  </div>
+  
+  <div mat-dialog-actions class="contBotones">
+    <button mat-raised-button class="confirmar" type="submit">Guardar</button>
+    <button (click)="closeDialog()" mat-raised-button class="alerta" type="button">Cancelar</button>
+  </div>
+</form>

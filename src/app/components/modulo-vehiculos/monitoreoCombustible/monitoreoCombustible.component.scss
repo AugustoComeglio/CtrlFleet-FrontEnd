@@ -1,0 +1,39 @@
+.contenedor{
+    padding: 50px;
+    width: 100%;
+}
+
+.top{
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px;
+}
+.graficos{
+   
+}
+
+.graficoBarra{
+    width: 100%;
+    height: 350px;
+    background-color: #f0f0f0;
+    margin: 10px;
+}
+
+.graficoDona{
+    width: 500px;
+    height: 500px;
+    background-color: #f0f0f0;
+    margin: 10px;
+}
+
+.graficoLinea{
+    width: 1000px;
+    height: 500px;
+    background-color: #f0f0f0;
+    margin: 10px;
+}
+
+.graficosAbajo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

@@ -1,0 +1,89 @@
+.contenedor{
+  padding: 50px;
+  width: 100%;
+}
+
+.top{
+  display: flex; 
+  justify-content: center; 
+  margin-top: 10px;
+}
+.filtro {
+  flex:1;
+}
+
+.select {
+  margin-left: 20px;
+}
+.boton{
+  flex:1;
+  text-align: right;
+}
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  mat-card-content h2 {
+    text-align: center;
+  }  
+
+  mat-card-actions {
+    display: flex; 
+    justify-content: space-between;
+  }
+
+  mat-card-header {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+
+  } 
+
+  .img-card{
+    border-radius: 2rem;
+    padding: 1rem;
+    height: 15rem;
+    object-fit: cover;
+  } 
+
+
+  .boton-add{
+    background-color:lightblue;;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    margin: 5px;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+  width: 100%;
+  gap: 1rem;
+}
+
+.patente{
+  text-align: center;
+}
+
+.contboton{
+  flex:1;
+  text-align: right;
+}
+.conttitles{
+  flex:1;
+}
+.botOpc{
+  display: flex; 
+  gap: 15px; 
+  align-items: center;
+}
+
+.body > app-root > app-sidenav > div > mat-sidenav-container > mat-sidenav > div > mat-nav-list > a:nth-child(1) > span > span{
+  display: flex;
+}
+
+

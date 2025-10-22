@@ -1,0 +1,53 @@
+<div class="contenedor">
+
+  <div class="titles">
+    <h1>Vehículos</h1>
+    <h2>{{mensaje}}</h2>
+  </div>
+
+  <div class="top">
+    <mat-form-field class="filtro">
+      <input matInput placeholder="Buscar..." [(ngModel)]="filtro"/>
+    </mat-form-field>
+
+    <!-- <mat-form-field class="select" >
+      <mat-label>Flota</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let flota of flotasList" [value]="flota.id">
+          {{flota.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>  -->
+
+    <div class="boton">
+      <button mat-button class="boton-add" (click)="Add()"><i class="fas fa-plus"></i></button>      
+    </div>
+  </div>
+<div class="grid">
+  <div class="cards">
+    <mat-card *ngFor="let vehiculo of vehiculos | filtrarVehiculos:filtro" class="example-card">
+      <mat-card-header>
+        <div class="conttitles">
+          <mat-card-title>{{ vehiculo.brand_name }}</mat-card-title>
+          <mat-card-subtitle>{{ vehiculo.model_name }}</mat-card-subtitle> 
+        </div>
+        <div class="contboton">
+          <button mat-button [matMenuTriggerFor]="menu"><i class="fas fa-ellipsis-v"></i></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="registroKilometraje(vehiculo)"><div class="botOpc"><i class="fas fa-tachometer-alt-fast"></i>Registro de Kilometraje</div></button>
+            <button mat-menu-item (click)="registroCombustible(vehiculo)"><div class="botOpc"><i class="fas fa-gas-pump"></i>Registro de Combustible</div></button>
+            <button mat-menu-item (click)="monitoreoCombustible(vehiculo)"><div class="botOpc"><i class="fas fa-analytics"></i>Monitoreo de combustible</div></button>
+            <button mat-menu-item (click)="historicoDanos(vehiculo)"><div class="botOpc"><i class="fas fa-exclamation-triangle"></i>Historico de Daños</div></button>
+            <button mat-menu-item (click)="mantenimientosVehiculos(vehiculo)"><div class="botOpc"><i class="fas fa-car-mechanic"></i>Mantenimientos</div></button>
+        </mat-menu> 
+        </div>             
+      </mat-card-header>
+      <!-- <img class="img-card" mat-card-image [src]="vehiculo.imagen" alt="Auto" /> -->
+      <img class="img-card" mat-card-image src="assets/auto.jpg" alt="Auto" />
+      <mat-card-content class="patente">
+        <button mat-button class="modificar" (click)="Show(vehiculo.id)">{{vehiculo.license_plate}}</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+</div>

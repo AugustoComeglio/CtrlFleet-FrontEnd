@@ -1,0 +1,62 @@
+<div class="contenedor">
+  
+  <div class="titles">
+    <h1>Usuarios</h1>
+  </div>
+
+  <div class="top">
+    <mat-form-field class="filtro">
+      <input matInput (keyup)="FilterChange($event)" placeholder="Buscar..." />
+    </mat-form-field>
+    
+    <div class="boton">
+      <button mat-button class="boton-add" (click)="Add()">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="cards">
+      <mat-card *ngFor="let usuario of usuarios" class="example-card">
+        <mat-card-header>
+          <div class="conttitles">
+            <mat-card-title
+              >{{ usuario.first_name }} {{ usuario.last_name }}</mat-card-title
+            >
+            <mat-card-subtitle>{{ usuario.user_type_id }}</mat-card-subtitle>
+          </div>
+          <div class="contboton">
+            <button mat-button [matMenuTriggerFor]="menu">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="(openpopup)">
+                <div class="botOpc">
+                  <i class="fas fa-tachometer-alt-fast"></i>Registro de
+                  Kilometraje
+                </div>
+              </button>
+              <button mat-menu-item (click)="(openpopup)">
+                <div class="botOpc">
+                  <i class="fas fa-gas-pump"></i>Registro de Combustible
+                </div>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-card-header>
+        <!-- <img class="img-card" mat-card-image [src]="usuario.dni" alt="Auto" /> -->
+        <img class="img-card" mat-card-image src="assets/id-card.jpg" alt="Auto" />
+        <mat-card-content class="patente">
+          <!-- <h2>Patente: {{ vehiculo.patente }}</h2> -->
+          <button mat-button class="modificar">{{ usuario.email }}</button>
+        </mat-card-content>
+
+        <!-- <mat-card-actions>
+          <button mat-button class="cremita">Ver</button>
+          <button mat-button class="modificar">Editar</button>
+        </mat-card-actions> -->
+      </mat-card>
+    </div>
+  </div>
+</div>

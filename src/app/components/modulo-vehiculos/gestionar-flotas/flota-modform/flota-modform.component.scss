@@ -1,0 +1,42 @@
+.title{
+    text-align: center;
+}
+
+.modificar{
+    background-color: lightblue;
+}
+
+.alerta{
+    background-color: lightcoral;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    
+}
+
+.confirmar{
+    background-color: lightblue;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+mat-card{
+    margin: 2%;
+    text-align: left;
+}
+
+.mat-mdc-form-field{
+    width: 98%;
+    margin: 1%;
+}
+
+.mat-50{
+    width: 48%;
+    margin: 1%;
+}
+
+button{
+    margin: 2px;
+}
+
+.contBotones {
+    display: flex;
+    justify-content: center;
+}

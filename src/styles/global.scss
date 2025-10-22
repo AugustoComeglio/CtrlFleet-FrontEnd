@@ -1,0 +1,57 @@
+.tabla{
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    min-width: 560px;
+    width: 100%;
+}
+
+
+.modificar{
+    background-color: lightblue !important;
+}
+
+.alerta{
+    background-color: lightcoral !important;
+}
+
+.confirmar{
+    background-color: #b0f2c2 !important;
+}
+
+.cremita{
+    background-color: #fff8e0 !important;
+}
+
+.mat-drawer{
+    background-color: #fff8e0 !important;
+}
+
+.swal2-actions .swal2-styled.swal2-confirm {
+    background-color: lightblue;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba($color: lightblue, $alpha: 0.5);
+    }
+}
+
+.swal2-actions .swal2-styled.swal2-cancel {
+    background-color: lightcoral;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba($color: lightcoral, $alpha: 0.5);
+    }
+}
+
+*::-webkit-scrollbar {
+    width: 0.85rem;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(175, 135, 0, 0.65);
+    border-radius: 0.5rem;
+  }

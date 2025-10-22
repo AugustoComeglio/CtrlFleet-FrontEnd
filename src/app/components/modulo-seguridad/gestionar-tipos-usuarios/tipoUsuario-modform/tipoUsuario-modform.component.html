@@ -1,0 +1,43 @@
+<form [formGroup]="myForm" (ngSubmit)="UpdateTipoUsuario()">
+  <h1 mat-dialog-title class="title">{{ inputData.title }}</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>{{ inputData.name }}</mat-label>
+      <input formControlName="name" matInput />
+    </mat-form-field>
+
+    <div formArrayName="permisos" class="listaPermisos">
+      <div
+        class="section"
+        *ngFor="let section of getPermisos()?.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <div formArrayName="actions">
+          <label>
+            {{ section.value.section | actionSectionType }}
+          </label>
+          <div
+            *ngFor="let action of getActions(i).controls; let j = index"
+            [formGroupName]="j"
+          >
+            <mat-checkbox formControlName="value" class="action">
+              {{ action.value.action | actionSectionType }}
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions class="contBotones">
+    <button mat-raised-button class="confirmar" type="submit">Guardar</button>
+    <button
+      (click)="closeDialog()"
+      mat-raised-button
+      class="alerta"
+      type="button"
+    >
+      Cancelar
+    </button>
+  </div>
+</form>

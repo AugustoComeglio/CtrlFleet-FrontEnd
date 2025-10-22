@@ -1,0 +1,75 @@
+.contenedor{
+    padding: 50px;
+    width: 100%;
+}
+.tabla{
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    min-width: 560px;
+    width: 100%;
+}
+
+.top{
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px;
+}
+.filtro {
+    flex:1;
+}
+.boton{
+    flex:1;
+    text-align: right;
+}
+
+.table {
+    padding: 20px;
+    background-color: #ffffff;
+
+}
+
+.table-header{
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-cell{
+    text-align: center;
+}
+
+
+.table-row:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+  
+  
+.table-cell, .table-header, .table-row{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ccc;
+    padding: 8px;
+}
+
+
+
+.boton-mod{
+    background-color:lightblue;
+    margin: 5px;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+.boton-eli{
+    background-color: lightcoral;
+    margin: 5px;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+
+
+.boton-add{
+    background-color:lightblue;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    border-radius: 0.15rem;
+    width: 100px;
+    
+  
+}
